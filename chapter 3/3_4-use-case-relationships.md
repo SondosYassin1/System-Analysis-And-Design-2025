@@ -401,8 +401,25 @@ graph TB
         %% Generalization
         AddStudent[Add Student]
         RemoveStudent[Remove Student]
-        
     end
+    
+    %% Actors
+    Student((Student))
+    Instructor((Instructor))
+    Admin((Admin))
+    
+    %% Actor associations
+    Student --> Enroll
+    Student --> Submit
+    Student --> View
+    Student --> Drop
+    
+    Instructor --> Create
+    Instructor --> Grade
+    Instructor --> Post
+    
+    Admin --> ManageUser
+    Admin --> Report
     
     %% Include relationships
     Enroll -.->|<<include>>| Auth
@@ -430,8 +447,10 @@ graph TB
     style Auth fill:#4caf50
     style Notify fill:#4caf50
     style Upload fill:#4caf50
+    style Student fill:#2196f3
+    style Instructor fill:#ff9800
+    style Admin fill:#f44336
 ```
-
 ---
 
 ## ✏️ Practice Exercise
